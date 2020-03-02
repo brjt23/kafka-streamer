@@ -15,3 +15,8 @@ So to send a message into a topic called 'test' you can run
 -  docker exec -it kafka-dynamic-source /opt/kafka/bin/kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic test
 
 This will open the que and any string you write in the console will be sent into the topic. 
+
+## Subscribing to groups
+To handle scalability we can take profit from [groups](https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/3.0.1.RELEASE/reference/html/spring-cloud-stream.html#consumer-groups)
+by adding the property spring.cloud.stream.bindings.uppercase-in-0.group=testGroup. To test it, you can launch more than 
+once the application and check that only one application will get the message from the test topic.
