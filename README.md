@@ -21,7 +21,13 @@ To handle scalability we can take profit from [groups](https://cloud.spring.io/s
 by adding the property spring.cloud.stream.bindings.uppercase-in-0.group=testGroup. To test it, you can launch more than 
 once the application and check that only one application will get the message from the test topic.
 
+## Using Cloud Events
+In order to make our events standard a dependency to a [Cloud Events](https://github.com/cloudevents/spec) implementation has been added. Since there is already
+a [Java Sdk](https://github.com/cloudevents/sdk-java) it has been include in the dependencies. 
+
 ## Tags
 To reuse code but keep different implementation of the binders I'm using git tags.
  - Tag 1.0: Tag 1.0 contains a simple implementation using functions that receive String messages. There are simple 
  bindings and a group binding.
+ - Tag 2.0: This tag contains a simple implementation using functions that alternate String and CloudEventImpl messages. 
+ The bindings are the same than in the Tag 1.0. 

@@ -22,6 +22,9 @@ public class EventConsumer {
   public Function<CloudEventImpl<ValueVO>, String> consume() {
 
     return value -> {
+      // By default jackson uses link list object to serialize non identified objects as link lists, so we need to map
+      // the link list into ValueVO otherwise the application will crash. I've included ModelMapper cause is the most
+      // quick since requires no set up.
       ValueVO valueVO = new ModelMapper().map(value.getData().get(), ValueVO.class);
       log.info("Consuming " + valueVO.getValue());
       return consumptionService.process(valueVO.getValue());
