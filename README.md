@@ -20,3 +20,8 @@ This will open the que and any string you write in the console will be sent into
 To handle scalability we can take profit from [groups](https://cloud.spring.io/spring-cloud-static/spring-cloud-stream/3.0.1.RELEASE/reference/html/spring-cloud-stream.html#consumer-groups)
 by adding the property spring.cloud.stream.bindings.uppercase-in-0.group=testGroup. To test it, you can launch more than 
 once the application and check that only one application will get the message from the test topic.
+
+## Tags
+To reuse code but keep different implementation of the binders I'm using git tags.
+ - Tag 1.0: Tag 1.0 contains a simple implementation using functions that receive String messages. There are simple 
+ bindings and a group binding.
