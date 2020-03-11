@@ -38,3 +38,4 @@ To reuse code but keep different implementation of the binders I'm using git tag
  - Tag 2.0: This tag contains a simple implementation using functions that alternate String and CloudEventImpl messages. 
  The bindings are the same than in the Tag 1.0. 
  - Tag 3.0: This tag contains a not passing contract test for destination binder uppercase
+ - Tag 4.0: This tag passes the contract test for destination binder uppercase
