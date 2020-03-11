@@ -36,7 +36,7 @@ public class KafkaStreamerApplication {
   @PostMapping(value="/")
   public void handlePost() {
 	  Faker faker = new Faker();
-	  Message<String> message = MessageBuilder.withPayload(faker.name().fullName()).build();
+	  Message<String> message = MessageBuilder.withPayload(faker.chuckNorris().fact()).build();
 	  processor.onNext(message);
   }
 
