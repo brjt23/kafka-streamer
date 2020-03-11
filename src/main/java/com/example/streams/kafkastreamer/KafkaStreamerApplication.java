@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.time.LocalDateTime;
+import java.util.UUID;
 import java.util.function.Function;
 
 @SpringBootApplication
@@ -25,7 +25,7 @@ public class KafkaStreamerApplication {
 
     return value -> {
       System.out.println("Received: " + value);
-      String id = new StringBuilder().append(this.getClass().getName()).append(LocalDateTime.now()).toString();
+      String id = UUID.randomUUID().toString();
       CloudEventBuilder<ValueVO> cloudEventBuilder = CloudEventBuilder.builder();
       try {
         URI source = new URI("file:///com/example/streams/kafkastreamer");
