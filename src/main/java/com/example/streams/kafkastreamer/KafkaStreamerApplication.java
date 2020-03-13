@@ -23,26 +23,12 @@ import reactor.core.publisher.EmitterProcessor;
 import reactor.core.publisher.Flux;
 
 @SpringBootApplication
-@RestController
 public class KafkaStreamerApplication {
 
-  private final EmitterProcessor<Message<String>> processor = EmitterProcessor.create();
-	
+
   public static void main(String[] args) {
 
     SpringApplication.run(KafkaStreamerApplication.class, args);
-  }
-  
-  @PostMapping(value="/")
-  public void handlePost() {
-	  Faker faker = new Faker();
-	  Message<String> message = MessageBuilder.withPayload(faker.chuckNorris().fact()).build();
-	  processor.onNext(message);
-  }
-
-  @Bean
-  public Supplier<Flux<Message<String>>> supplier() {
-	  return () -> processor;
   }
   
   @Bean
