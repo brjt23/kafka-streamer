@@ -17,21 +17,14 @@ import java.util.function.Supplier;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @AutoConfigureMessageVerifier
-@EnableBinding(KafkaStreamerApplication.class)
 public abstract class KafkaStreamerApplicationTests {
 
-  @Autowired
-  private MessageVerifier verifier;
 
   @Autowired
   private DummyController dummyController;
 
-  @Autowired
-  private Supplier supplier;
-
   public void supply() {
 
-//    supplier.get();
     dummyController.handlePost();
   }
 }
