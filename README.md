@@ -28,7 +28,7 @@ a [Java Sdk](https://github.com/cloudevents/sdk-java) it has been include in the
 ## Integrating with Spring Cloud Contract
 To integrate with [spring cloud contract]( https://spring.io/projects/spring-cloud-contract) the only requirement is to add the Spring Cloud Contract dependencies, the 
 spring-cloud-stream-test-support dependency and the test-binder dependency. The the base class for the contracts must 
-include the tag `@AutoConfigureMessageVerifier` and the tag `@EnableBinding` in order to get the required beans properly 
+include the tag `@AutoConfigureMessageVerifier` in order to get the required beans properly 
 configured. For the rest it behaves as for testing rest APIs.
 
 ## Tags
@@ -39,3 +39,4 @@ To reuse code but keep different implementation of the binders I'm using git tag
  The bindings are the same than in the Tag 1.0. 
  - Tag 3.0: This tag contains a not passing contract test for destination binder uppercase
  - Tag 4.0: This tag passes the contract test for destination binder uppercase
+ - Tag 5.0: This tag contains a passing test for a reactive source using a supplier.
